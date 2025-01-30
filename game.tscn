@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://d12yvpjv8e35m"]
+
+[ext_resource type="PackedScene" uid="uid://dyaxnv5j0307y" path="res://card.tscn" id="1_671ki"]
+[ext_resource type="Script" path="res://Game.gd" id="1_nbdit"]
+[ext_resource type="Script" path="res://card_manager.gd" id="1_sw3bs"]
+[ext_resource type="Script" path="res://Deck.gd" id="4_gmi3h"]
+[ext_resource type="Script" path="res://Hand.gd" id="5_dd10j"]
+[ext_resource type="Script" path="res://Card.gd" id="6_13437"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_nbdit")
+
+[node name="CardManager" type="Node2D" parent="."]
+script = ExtResource("1_sw3bs")
+
+[node name="Card" parent="CardManager" instance=ExtResource("1_671ki")]
+position = Vector2(109, 123)
+
+[node name="Card2" parent="CardManager" instance=ExtResource("1_671ki")]
+position = Vector2(285, 120)
+
+[node name="DeckNode" type="Node" parent="."]
+script = ExtResource("4_gmi3h")
+
+[node name="HandNode" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_dd10j")
+
+[node name="Card" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("6_13437")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyaxnv5j0307y"]
+
+[ext_resource type="Texture2D" uid="uid://dd5p4p6vxvwsk" path="res://Cards/10.jpg" id="1_0dtcs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jragx"]
+size = Vector2(174, 175)
+
+[node name="Card" type="Node2D"]
+
+[node name="CardImage" type="Sprite2D" parent="."]
+position = Vector2(-1, 0)
+scale = Vector2(2.70312, 2.70312)
+texture = ExtResource("1_0dtcs")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_jragx")
